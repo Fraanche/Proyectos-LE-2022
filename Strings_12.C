@@ -2,10 +2,11 @@
 #include <string.h>
 #include <stdio_ext.h>
 #define LONGITUD_MAX 51
-
+#define CANTIDAD_PAL 5
     
 int main(void) {
-    int cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0, cont5 = 0;
+    int cont[CANTIDAD_PAL];
+    unsigned char orden[] = [0, 0, 0, 0, 0];
     char palabra1[LONGITUD_MAX],
     palabra2[LONGITUD_MAX],
     palabra3[LONGITUD_MAX],
@@ -26,17 +27,42 @@ int main(void) {
     printf("\nIngrese la quinta palabra: ");
     scanf("%s", palabra5);
     __fpurge(stdin);
-    cont1 = strcmp(palabra2, palabra1) + strcmp(palabra3, palabra1) + strcmp(palabra4, palabra1) + strcmp(palabra5, palabra1);
+    cont[0] = strcmp(palabra2, palabra1) + strcmp(palabra3, palabra1) + strcmp(palabra4, palabra1) + strcmp(palabra5, palabra1);
     printf("%d\n", cont1);
-    cont2 = strcmp(palabra1, palabra2) + strcmp(palabra3, palabra2) + strcmp(palabra4, palabra2) + strcmp(palabra5, palabra2);
+    cont[1] = strcmp(palabra1, palabra2) + strcmp(palabra3, palabra2) + strcmp(palabra4, palabra2) + strcmp(palabra5, palabra2);
     printf("%d\n", cont2);
-    cont3 = strcmp(palabra1, palabra3) + strcmp(palabra2, palabra3) + strcmp(palabra4, palabra3) + strcmp(palabra5, palabra3);
+    cont[2] = strcmp(palabra1, palabra3) + strcmp(palabra2, palabra3) + strcmp(palabra4, palabra3) + strcmp(palabra5, palabra3);
     printf("%d\n", cont3);
-    cont4 = strcmp(palabra1, palabra4) + strcmp(palabra2, palabra4) + strcmp(palabra3, palabra4) + strcmp(palabra5, palabra4);
+    cont[3] = strcmp(palabra1, palabra4) + strcmp(palabra2, palabra4) + strcmp(palabra3, palabra4) + strcmp(palabra5, palabra4);
     printf("%d\n", cont4);
-    cont5 = strcmp(palabra1, palabra5) + strcmp(palabra2, palabra5) + strcmp(palabra3, palabra5) + strcmp(palabra4, palabra5);
+    cont[4] = strcmp(palabra1, palabra5) + strcmp(palabra2, palabra5) + strcmp(palabra3, palabra5) + strcmp(palabra4, palabra5);
     printf("%d\n", cont5);
+
+    for(unsigned char j = 0; j<CANTIDAD_PAL; j++){
+        if(cont[0]>cont[j]){
+            orden[++pos[0]] = palabra1;     
+        }
+    }
+    for(unsigned char j = 0; j<CANTIDAD_PAL; j++){
+        if(cont[1]>cont[j]){
+            orden[++pos[1]] = palabra2;     
+        }
+    }
+    for(unsigned char j = 0; j<CANTIDAD_PAL; j++){
+        if(cont[2]>cont[j]){
+            orden[++pos[2]] = palabra3;     
+        }
+    }
+    for(unsigned char j = 0; j<CANTIDAD_PAL; j++){
+        if(cont[3]>cont[j]){
+            orden[++pos[3]] = palabra4;      
+        }
+    }
+    for(unsigned char j = 0; j<CANTIDAD_PAL; j++){
+        if(cont[4]>cont[j]){
+            orden[++pos[4]] = palabra5;     
+        }
+    }
     
 }
-
 
