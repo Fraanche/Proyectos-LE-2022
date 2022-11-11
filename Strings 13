@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdio_ext.h>
+#define LONG_MAX 51
+
+char cuenta_letras(char []);
+char palabra[LONG_MAX];
+
+int main(void) {
+    char opcion;
+    do{
+        printf("Ingrese la palabra por pantalla: ");
+        scanf("%s", palabra);
+        cuenta_letras(palabra);
+        printf("Si desea ingresar otra palabra, presione S, de lo contrario presione otra tecla\n");
+        __fpurge(stdin);
+        scanf("%c", &opcion);
+    }
+    while ((opcion == 's') || (opcion == 'S'));
+    printf("El programa ha finalizado...");
+}
+
+char cuenta_letras(char palabra[]){
+    char longitud = 0;
+    for(char i = 0; palabra[i]; i++, longitud++);
+    printf("%s tiene %d letras\n", palabra, longitud);
+}
