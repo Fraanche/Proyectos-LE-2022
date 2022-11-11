@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdio_ext.h>
 
 float promedio(void);
 
@@ -15,6 +16,7 @@ float promedio(void){
         printf("\nIngresa la nota n°%d: ", ++c);
         c--;
         scanf("%f",&n);
+        __fpurge(stdin);
         if ((n<0 || n>10) && n!=-1) 
             printf("\nValor incorrecto, vuelva a introducirlo");
 
