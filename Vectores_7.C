@@ -50,3 +50,5 @@ char desaprobados_alumn(float notas[]){
         if (notas[i]<7)
             desaprobados++;
     }
+    return desaprobados;
+}
